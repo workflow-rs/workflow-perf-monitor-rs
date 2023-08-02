@@ -6,6 +6,10 @@
 [![docs.rs](https://docs.rs/perf_monitor/badge.svg)](https://docs.rs/perf_monitor)
 [![crates.io](https://img.shields.io/crates/v/perf_monitor.svg)](https://crates.io/crates/perf_monitor)
 
+
+This crate is an updated fork of https://github.com/larksuite/perf-monitor-rs used by projects based on the `workflow-rs`.
+
+
 ```toml
 # Cargo.toml
 [dependencies]

@@ -1,6 +1,6 @@
 [package]
-name = "perf_monitor"
-version = "0.2.0"
+name = "workflow-perf-monitor"
+version = "0.0.1"
 authors = ["zhangli.pear <zhangli.pear@bytedance.com>"]
 edition = "2018"
 

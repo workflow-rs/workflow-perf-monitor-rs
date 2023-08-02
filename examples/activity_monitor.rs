@@ -1,12 +1,12 @@
 use std::time::Duration;
 use std::time::Instant;
 
-use perf_monitor::cpu::processor_numbers;
-use perf_monitor::cpu::ProcessStat;
-use perf_monitor::cpu::ThreadStat;
-use perf_monitor::fd::fd_count_cur;
-use perf_monitor::io::get_process_io_stats;
-use perf_monitor::mem::get_process_memory_info;
+use workflow_perf_monitor::cpu::processor_numbers;
+use workflow_perf_monitor::cpu::ProcessStat;
+use workflow_perf_monitor::cpu::ThreadStat;
+use workflow_perf_monitor::fd::fd_count_cur;
+use workflow_perf_monitor::io::get_process_io_stats;
+use workflow_perf_monitor::mem::get_process_memory_info;
 
 fn main() {
     build_some_threads();

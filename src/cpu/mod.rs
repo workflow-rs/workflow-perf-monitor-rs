@@ -45,10 +45,10 @@ use ios_macos as platform;
 #[cfg(target_os = "windows")]
 use windows as platform;
 
-pub use platform::{cpu_time, ThreadId};
-pub use std::io::Result;
 #[cfg(any(target_os = "ios", target_os = "macos"))]
 pub use ios_macos::get_thread_basic_info;
+pub use platform::{cpu_time, ThreadId};
+pub use std::io::Result;
 
 use std::{
     io, mem,

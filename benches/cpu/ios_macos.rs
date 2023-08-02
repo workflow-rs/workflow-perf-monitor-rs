@@ -2,15 +2,8 @@
 mod tests {
     use criterion::Criterion;
     use libc::time_value_t;
-    use perf_monitor::{
-        cpu::ThreadId,
-        cpu::get_thread_basic_info
-    };
-    use std::{
-        convert::TryInto,
-        time::Instant,
-        time::Duration
-    };
+    use std::{convert::TryInto, time::Duration, time::Instant};
+    use workflow_perf_monitor::{cpu::get_thread_basic_info, cpu::ThreadId};
 
     #[inline]
     fn time_value_to_u64(t: time_value_t) -> u64 {
