@@ -10,7 +10,6 @@ pub struct ProcessMemoryInfo {
     /// column of taskmgr.exe.
     pub resident_set_size: u64,
     #[cfg(not(any(target_os = "android", target_os = "linux")))]
-    #[cfg_attr(doc, doc(cfg(not(linux))))]
     pub resident_set_size_peak: u64,
 
     /// this is the total amount of virtual memory used by the process.
