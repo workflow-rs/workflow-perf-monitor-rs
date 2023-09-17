@@ -88,11 +88,19 @@ fn get_process_memory_info_impl() -> Result<ProcessMemoryInfo> {
     // https://www.kernel.org/doc/Documentation/filesystems/proc.txt
     let statm = std::fs::read_to_string("/proc/self/statm")?;
     let mut parts = statm.split(' ');
-    let Some(virtual_memory_size_pages): Option<u64> = parts.next().and_then(|s| s.parse().ok()) else {
-        return Err(Error::new(std::io::ErrorKind::Other, "Invalid VmSize in /proc/self/statm"));
+    let Some(virtual_memory_size_pages): Option<u64> = parts.next().and_then(|s| s.parse().ok())
+    else {
+        return Err(Error::new(
+            std::io::ErrorKind::Other,
+            "Invalid VmSize in /proc/self/statm",
+        ));
     };
-    let Some(resident_set_size_pages): Option<u64> = parts.next().and_then(|s| s.parse().ok()) else {
-        return Err(Error::new(std::io::ErrorKind::Other, "Invalid VmRSS in /proc/self/statm"));
+    let Some(resident_set_size_pages): Option<u64> = parts.next().and_then(|s| s.parse().ok())
+    else {
+        return Err(Error::new(
+            std::io::ErrorKind::Other,
+            "Invalid VmRSS in /proc/self/statm",
+        ));
     };
     Ok(ProcessMemoryInfo {
         virtual_memory_size: virtual_memory_size_pages * page_size(),
